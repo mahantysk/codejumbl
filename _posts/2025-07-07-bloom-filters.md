@@ -1,6 +1,7 @@
 ---
 title: "Bloom Filters: A probalistic powerhouse"
 date: 2025-07-07 00:34:00 +0530
+last_modified_at: 2025-07-08 00:34:00 +0530
 categories: [Article, DataStructures]
 tags: [data-structures]
 math: true
@@ -48,6 +49,20 @@ To check membership:
 2. If *any* of the corresponding bits are 0 → **definitely not in the set**.
 3. If *all* are 1 → **possibly in the set**.
 
+Lets try to visualize this with the help of an interactive codepen. We can add a word, and test if a word exists with the help of the <kbd>Add</kbd>/<kbd>Test</kbd> buttons.
+
+The filter will output one of the two messages. 
+- `"word" is definitely not in the filter.` : When the filter is sure the word doesnot exists.
+- `"word" might be in the filter.` : When the filter thinks the word might be present.
+
+{% raw %}
+<p class="codepen" data-height="512" data-default-tab="result" data-slug-hash="raOBqQx" data-pen-title="Bloom Filter" data-user="Sandeep-Mahanty" style="height: 512px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/Sandeep-Mahanty/pen/raOBqQx">
+  Bloom Filter</a> by Sandeep Mahanty (<a href="https://codepen.io/Sandeep-Mahanty">@Sandeep-Mahanty</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
+{% endraw %}
 ---
 
 ### Trade-offs: False Positives
