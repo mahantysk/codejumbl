@@ -113,13 +113,16 @@
     {% endif %}
 
     <!-- Web Analytics -->
-    {% for analytics in site.analytics %}
+    <!--{% for analytics in site.analytics %}
       {% capture str %}{{ analytics }}{% endcapture %}
       {% assign platform = str | split: '{' | first %}
       {% if site.analytics[platform].id and site.analytics[platform].id != empty %}
         {% include analytics/{{ platform }}.html %}
       {% endif %}
     {% endfor %}
+  {% endif %} -->
+  {% if site.analytics.google.id %}
+    {% include analytics/google.html %}
   {% endif %}
 
   {% include metadata-hook.html %}
