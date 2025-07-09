@@ -29,6 +29,9 @@ jobs:
       - name: Build the site with Jekyll
         run: bundle exec jekyll build
 
+      - name: Copy CNAME into _site
+        run: cp CNAME _site/
+
       - name: Upload _site to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
