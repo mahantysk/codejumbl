@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Bloom Filters: A probalistic powerhouse" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-07T00:34:00+05:30","datePublished":"2025-07-07T00:34:00+05:30","description":"Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.","headline":"Bloom Filters: A probalistic powerhouse","mainEntityOfPage":{"@type":"WebPage","@id":"https://codejumbl.com/posts/bloom-filters/"},"url":"https://codejumbl.com/posts/bloom-filters/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-08T00:34:00+05:30","datePublished":"2025-07-07T00:34:00+05:30","description":"Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.","headline":"Bloom Filters: A probalistic powerhouse","mainEntityOfPage":{"@type":"WebPage","@id":"https://codejumbl.com/posts/bloom-filters/"},"url":"https://codejumbl.com/posts/bloom-filters/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -779,6 +779,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1751915040"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jul  8, 2025
+</time>
+
+        </span>
+      
 
       
 
@@ -821,9 +844,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="476 words"
+  title="559 words"
 >
-  <em>2 min</em> read</span>
+  <em>3 min</em> read</span>
 
         </div>
       </div>
@@ -903,6 +926,21 @@ That’s where <strong>Bloom Filters</strong> come in.</p>
   <li>If <em>any</em> of the corresponding bits are 0 → <strong>definitely not in the set</strong>.</li>
   <li>If <em>all</em> are 1 → <strong>possibly in the set</strong>.</li>
 </ol>
+
+<p>Lets try to visualize this with the help of an interactive codepen. We can add a word, and test if a word exists with the help of the <kbd>Add</kbd>/<kbd>Test</kbd> buttons.</p>
+
+<p>The filter will output one of the two messages.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">"word" is definitely not in the filter.</code> : When the filter is sure the word doesnot exists.</li>
+  <li><code class="language-plaintext highlighter-rouge">"word" might be in the filter.</code> : When the filter thinks the word might be present.</li>
+</ul>
+
+<p class="codepen" data-height="512" data-default-tab="result" data-slug-hash="raOBqQx" data-pen-title="Bloom Filter" data-user="Sandeep-Mahanty" style="height: 512px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/Sandeep-Mahanty/pen/raOBqQx">
+  Bloom Filter</a> by Sandeep Mahanty (<a href="https://codepen.io/Sandeep-Mahanty">@Sandeep-Mahanty</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async="" src="https://public.codepenassets.com/embed/index.js"></script>
 
 <hr />
 
