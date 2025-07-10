@@ -5,6 +5,10 @@ last_modified_at: 2025-07-08 00:34:00 +0530
 categories: [Article, DataStructures]
 tags: [data-structures]
 math: true
+image:
+  path: /assets/img/posts/bloom-filters.png
+  lqip: data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASoUABQAPm0wkkckIqGhKAqogA2JaQDA3YvWcLsQAf2XLP2nscqcS3IjWm6RsAD+/ZMDmSAXsZTNv4qnKniVVJ3OWIf9fzq...
+  alt: Diagram showing how a Bloom Filter uses hash functions to set bits
 description: Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.
 ---
 
