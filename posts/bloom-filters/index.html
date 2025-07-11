@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Bloom Filters: A probalistic powerhouse" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems." />
-<meta property="og:description" content="Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems." />
+<meta name="description" content="Understand how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems." />
+<meta property="og:description" content="Understand how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems." />
 <link rel="canonical" href="https://codejumbl.com/posts/bloom-filters/" />
 <meta property="og:url" content="https://codejumbl.com/posts/bloom-filters/" />
 <meta property="og:site_name" content="codejumbl" />
@@ -46,7 +46,7 @@
 <meta name="twitter:image:alt" content="Diagram showing how a Bloom Filter uses hash functions to set bits" />
 <meta property="twitter:title" content="Bloom Filters: A probalistic powerhouse" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-08T00:34:00+05:30","datePublished":"2025-07-07T00:34:00+05:30","description":"Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.","headline":"Bloom Filters: A probalistic powerhouse","image":{"lqip":"data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASoUABQAPm0wkkckIqGhKAqogA2JaQDA3YvWcLsQAf2XLP2nscqcS3IjWm6RsAD+/ZMDmSAXsZTNv4qnKniVVJ3OWIf9fzq...","alt":"Diagram showing how a Bloom Filter uses hash functions to set bits","url":"https://codejumbl.com/assets/img/posts/bloom-filters.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://codejumbl.com/posts/bloom-filters/"},"url":"https://codejumbl.com/posts/bloom-filters/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-11T00:34:00+05:30","datePublished":"2025-07-07T00:34:00+05:30","description":"Understand how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.","headline":"Bloom Filters: A probalistic powerhouse","image":{"lqip":"data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASoUABQAPm0wkkckIqGhKAqogA2JaQDA3YvWcLsQAf2XLP2nscqcS3IjWm6RsAD+/ZMDmSAXsZTNv4qnKniVVJ3OWIf9fzq...","alt":"Diagram showing how a Bloom Filter uses hash functions to set bits","url":"https://codejumbl.com/assets/img/posts/bloom-filters.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://codejumbl.com/posts/bloom-filters/"},"url":"https://codejumbl.com/posts/bloom-filters/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -781,6 +781,39 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -796,6 +829,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -867,7 +933,7 @@
   <header>
     <h1 data-toc-skip>Bloom Filters: A probalistic powerhouse</h1>
     
-      <p class="post-desc fw-light mb-4">Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.</p>
+      <p class="post-desc fw-light mb-4">Understand how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.</p>
     
 
     <div class="post-meta text-muted">
@@ -909,13 +975,13 @@
 
 <time
   
-  data-ts="1751915040"
+  data-ts="1752174240"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jul  8, 2025
+  Jul 11, 2025
 </time>
 
         </span>
@@ -971,9 +1037,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="559 words"
+  title="962 words"
 >
-  <em>3 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -1039,14 +1105,14 @@ That’s where <strong>Bloom Filters</strong> come in.</p>
   <li><code class="language-plaintext highlighter-rouge">k</code> different <strong>hash functions</strong> that map input to positions in the bit array.</li>
 </ul>
 
-<h4 id="insertion"><span class="me-2">Insertion:</span><a href="#insertion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="insertion"><span class="me-2">Insertion</span><a href="#insertion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>To insert an element:</p>
 <ol>
   <li>Hash the element with all <code class="language-plaintext highlighter-rouge">k</code> hash functions.</li>
   <li>Set each corresponding bit to 1.</li>
 </ol>
 
-<h4 id="lookup"><span class="me-2">Lookup:</span><a href="#lookup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="lookup"><span class="me-2">Lookup</span><a href="#lookup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <p>To check membership:</p>
 <ol>
   <li>Hash the element with the same <code class="language-plaintext highlighter-rouge">k</code> functions.</li>
@@ -1070,6 +1136,45 @@ That’s where <strong>Bloom Filters</strong> come in.</p>
 <script async="" src="https://public.codepenassets.com/embed/index.js"></script>
 
 <hr />
+
+<h3 id="choosing-the-right-hash-function"><span class="me-2">Choosing the Right Hash Function</span><a href="#choosing-the-right-hash-function" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>A core component of a Bloom filter’s performance lies in the <strong>quality and speed of its hash functions</strong>. Each element added to the filter is passed through multiple hash functions, which determine which bits to set (or check) in the bit array. The choice of these hash functions significantly affects the false positive rate and performance and hence fast hash functions like <a href="https://en.wikipedia.org/wiki/MurmurHash">murmur</a> are generally preferred over cryptographic hash functions.</p>
+
+<h4 id="why-not-use-sha-or-md5-"><span class="me-2">Why Not Use SHA or MD5 ?</span><a href="#why-not-use-sha-or-md5-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Hash functions like <code class="language-plaintext highlighter-rouge">SHA-256</code>, <code class="language-plaintext highlighter-rouge">SHA-1</code>, or <code class="language-plaintext highlighter-rouge">MD5</code> are <strong>cryptographic hash functions</strong>, designed for <strong>security</strong> rather than speed. They provide strong guarantees like:</p>
+
+<ul>
+  <li>Resistance to collisions</li>
+  <li>Irreversibility</li>
+  <li>Uniform distribution</li>
+</ul>
+
+<p>While that’s excellent for <strong>password hashing</strong> or <strong>digital signatures</strong>, it’s overkill for Bloom filters. Cryptographic hashes are <strong>computationally expensive</strong>, which becomes a bottleneck when we need to hash large volumes of data rapidly.</p>
+
+<h4 id="why-murmurhash-or-similar-is-preferred-"><span class="me-2">Why MurmurHash (or Similar) is Preferred ?</span><a href="#why-murmurhash-or-similar-is-preferred-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><strong>MurmurHash</strong> is a <strong>non-cryptographic</strong> hash function designed for <strong>speed and simplicity</strong>, making it ideal for use in Bloom filters. Its advantages include:</p>
+
+<ul>
+  <li><strong>Fast</strong> — Much faster than cryptographic hashes, especially in tight loops</li>
+  <li><strong>Uniform output</strong> — Good distribution of hash values with minimal collisions</li>
+  <li><strong>Deterministic and portable</strong> — Same input → same output across platforms</li>
+  <li><strong>Low CPU overhead</strong> — Critical when performing multiple hash operations per item</li>
+</ul>
+
+<p>Bloom filters don’t need security — they need <strong>consistent and efficient hashing</strong>, and MurmurHash strikes that balance perfectly.</p>
+
+<h4 id="alternative-hashes"><span class="me-2">Alternative Hashes</span><a href="#alternative-hashes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Other popular non-cryptographic hash functions used in Bloom filters include:</p>
+
+<ul>
+  <li><a href="https://github.com/Cyan4973/xxHash">xxHash</a> — ultra-fast, used in systems like Apache Kafka</li>
+  <li><a href="https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function">FNV</a> — simple and widely used</li>
+  <li><a href="https://github.com/google/cityhash">CityHash</a> — optimized for speed and cache-friendliness by Google.</li>
+</ul>
 
 <h3 id="trade-offs-false-positives"><span class="me-2">Trade-offs: False Positives</span><a href="#trade-offs-false-positives" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1106,6 +1211,13 @@ That’s where <strong>Bloom Filters</strong> come in.</p>
   <li>You can tolerate false positives.</li>
   <li>Memory usage matters more than perfect accuracy.</li>
 </ul>
+
+<h3 id="real-world-uses-of-bloom-filter"><span class="me-2">Real world uses of Bloom Filter</span><a href="#real-world-uses-of-bloom-filter" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><strong>Cassandra</strong> the distributed highly available and high write throughput NoSQL database employs bloom filters extensively in its read path. Cassandra keeps data flushed into SSTables (String Sorted Tables) on disk to quickly read data. Bloom filters help here by efficiently determining if the data being requested exists in a particular SSTable file. <a href="https://cassandra.apache.org/doc/5.0/cassandra/managing/operating/bloom_filters.html">Bloom Filters</a></p>
+
+<p>Similarly Apache HBase and ScyllaDB are also example of some databases which use bloom filters.</p>
+
+<p><strong>CDNs</strong> like Akamai leverage bloom filters to quickly check if an object is present in the cache or not.</p>
 
 <h3 id="java-implementation"><span class="me-2">Java Implementation</span><a href="#java-implementation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1175,7 +1287,17 @@ That’s where <strong>Bloom Filters</strong> come in.</p>
 
 <h3 id="final-thoughts"><span class="me-2">Final Thoughts</span><a href="#final-thoughts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>Bloom Filters are a great tool in the arsenal of backend engineers, especially when you’re operating at scale and every byte of memory counts. They’re not perfect, but they’re powerful — especially when used with intention.</p>
+<blockquote>
+  <p>Bloom Filters are a great tool in the arsenal of backend engineers, especially when you’re operating at scale and every byte of memory counts. This post was an attempt at presenting the content in a simplified manner.</p>
+</blockquote>
+
+<h3 id="further-reading"><span class="me-2">Further Reading</span><a href="#further-reading" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>Excellent report on bloom filter by James Blustein, 
+Amal El-Maazawi -  <a href="https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/computerscience/technical-reports/CS-2002-10.pdf">Bloom Filters - A Tutorial, Analysis, and Survey</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Bloom_filter?utm_source=chatgpt.com">Bloom filter - Wikipedia </a></li>
+  <li>Excellent explanation post By Bill Mill <a href="https://github.com/llimllib">@llimllib</a> - <a href="https://llimllib.github.io/bloomfilter-tutorial/">Bloom Filters by Example</a></li>
+</ul>
 
   </div>
 

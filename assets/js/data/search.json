@@ -5,7 +5,7 @@
     "categories": "Article, DataStructures",
     "tags": "data-structures",
     "date": "2025-07-07 00:34:00 +0530",
-    "content": "Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems."
+    "content": "Understand how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems."
   }
   
 ]
