@@ -1,7 +1,7 @@
 ---
 title: "Bloom Filters: A probalistic powerhouse"
 date: 2025-07-07 00:34:00 +0530
-last_modified_at: 2025-07-08 00:34:00 +0530
+last_modified_at: 2025-07-11 00:34:00 +0530
 categories: [Article, DataStructures]
 tags: [data-structures]
 math: true
@@ -9,7 +9,7 @@ image:
   path: /assets/img/posts/bloom-filters.png
   lqip: data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASoUABQAPm0wkkckIqGhKAqogA2JaQDA3YvWcLsQAf2XLP2nscqcS3IjWm6RsAD+/ZMDmSAXsZTNv4qnKniVVJ3OWIf9fzq...
   alt: Diagram showing how a Bloom Filter uses hash functions to set bits
-description: Learn how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.
+description: Understand how Bloom Filters provide a space-efficient, probabilistic way to test set membership in large-scale systems.
 ---
 
 ## Understanding Bloom Filters: A Probabilistic Powerhouse
@@ -42,12 +42,12 @@ A Bloom filter is essentially:
 - A **bit array** of size `m`, initialized to all 0s.
 - `k` different **hash functions** that map input to positions in the bit array.
 
-#### Insertion:
+#### Insertion
 To insert an element:
 1. Hash the element with all `k` hash functions.
 2. Set each corresponding bit to 1.
 
-#### Lookup:
+#### Lookup
 To check membership:
 1. Hash the element with the same `k` functions.
 2. If *any* of the corresponding bits are 0 → **definitely not in the set**.
@@ -68,6 +68,40 @@ The filter will output one of the two messages.
 <script async src="https://public.codepenassets.com/embed/index.js"></script>
 {% endraw %}
 ---
+
+### Choosing the Right Hash Function
+
+A core component of a Bloom filter’s performance lies in the **quality and speed of its hash functions**. Each element added to the filter is passed through multiple hash functions, which determine which bits to set (or check) in the bit array. The choice of these hash functions significantly affects the false positive rate and performance and hence fast hash functions like [murmur](https://en.wikipedia.org/wiki/MurmurHash) are generally preferred over cryptographic hash functions.
+
+#### Why Not Use SHA or MD5 ?
+
+Hash functions like `SHA-256`, `SHA-1`, or `MD5` are **cryptographic hash functions**, designed for **security** rather than speed. They provide strong guarantees like:
+
+- Resistance to collisions  
+- Irreversibility  
+- Uniform distribution  
+
+While that’s excellent for **password hashing** or **digital signatures**, it’s overkill for Bloom filters. Cryptographic hashes are **computationally expensive**, which becomes a bottleneck when we need to hash large volumes of data rapidly.
+
+#### Why MurmurHash (or Similar) is Preferred ?
+
+**MurmurHash** is a **non-cryptographic** hash function designed for **speed and simplicity**, making it ideal for use in Bloom filters. Its advantages include:
+
+- **Fast** — Much faster than cryptographic hashes, especially in tight loops  
+- **Uniform output** — Good distribution of hash values with minimal collisions  
+- **Deterministic and portable** — Same input → same output across platforms  
+- **Low CPU overhead** — Critical when performing multiple hash operations per item  
+
+Bloom filters don’t need security — they need **consistent and efficient hashing**, and MurmurHash strikes that balance perfectly.
+
+#### Alternative Hashes
+
+Other popular non-cryptographic hash functions used in Bloom filters include:
+
+- [xxHash](https://github.com/Cyan4973/xxHash) — ultra-fast, used in systems like Apache Kafka  
+- [FNV](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function) — simple and widely used  
+- [CityHash](https://github.com/google/cityhash) — optimized for speed and cache-friendliness by Google. 
+
 
 ### Trade-offs: False Positives
 
@@ -100,6 +134,13 @@ $$
 - You don’t need to delete items.
 - You can tolerate false positives.
 - Memory usage matters more than perfect accuracy.
+
+### Real world uses of Bloom Filter
+**Cassandra** the distributed highly available and high write throughput NoSQL database employs bloom filters extensively in its read path. Cassandra keeps data flushed into SSTables (String Sorted Tables) on disk to quickly read data. Bloom filters help here by efficiently determining if the data being requested exists in a particular SSTable file. [Bloom Filters](https://cassandra.apache.org/doc/5.0/cassandra/managing/operating/bloom_filters.html)
+
+Similarly Apache HBase and ScyllaDB are also example of some databases which use bloom filters.
+
+**CDNs** like Akamai leverage bloom filters to quickly check if an object is present in the cache or not.
 
 ### Java Implementation
 
@@ -138,4 +179,10 @@ $$
 
 ### Final Thoughts
 
-Bloom Filters are a great tool in the arsenal of backend engineers, especially when you're operating at scale and every byte of memory counts. They're not perfect, but they’re powerful — especially when used with intention.
+> Bloom Filters are a great tool in the arsenal of backend engineers, especially when you're operating at scale and every byte of memory counts. This post was an attempt at presenting the content in a simplified manner.
+
+### Further Reading
+- Excellent report on bloom filter by James Blustein, 
+Amal El-Maazawi -  [Bloom Filters - A Tutorial, Analysis, and Survey](https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/computerscience/technical-reports/CS-2002-10.pdf)
+- [Bloom filter - Wikipedia ](https://en.wikipedia.org/wiki/Bloom_filter?utm_source=chatgpt.com)
+- Excellent explanation post By Bill Mill [@llimllib](https://github.com/llimllib) - [Bloom Filters by Example](https://llimllib.github.io/bloomfilter-tutorial/)
