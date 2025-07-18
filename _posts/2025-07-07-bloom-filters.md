@@ -1,5 +1,5 @@
 ---
-title: "Bloom Filters: A probalistic powerhouse"
+title: "Bloom Filters: A probabilistic powerhouse"
 date: 2025-07-07 00:34:00 +0530
 last_modified_at: 2025-07-11 00:34:00 +0530
 categories: [Article, DataStructures]
