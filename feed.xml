@@ -4,7 +4,7 @@
   <id>https://codejumbl.com/</id>
   <title>codejumbl</title>
   <subtitle>CodeJumbl shares practical insights, tutorials, and architectures for modern backend engineers and system builders.</subtitle>
-  <updated>2025-07-11T11:01:57+05:30</updated>
+  <updated>2025-07-18T14:38:58+05:30</updated>
   <author>
     <name>Sandeep Mahanty</name>
     <uri>https://codejumbl.com/</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>Bloom Filters: A probalistic powerhouse</title>
-    <link href="https://codejumbl.com/posts/bloom-filters/" rel="alternate" type="text/html" title="Bloom Filters: A probalistic powerhouse" />
+    <title>Bloom Filters: A probabilistic powerhouse</title>
+    <link href="https://codejumbl.com/posts/bloom-filters/" rel="alternate" type="text/html" title="Bloom Filters: A probabilistic powerhouse" />
     <published>2025-07-07T00:34:00+05:30</published>
   
     <updated>2025-07-11T00:34:00+05:30</updated>
